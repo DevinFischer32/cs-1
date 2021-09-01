@@ -22,7 +22,7 @@ for (let i = 0; i < numbers.length; i++) {
     }
 }
 // Q: What is the time complexity of of this solution?
-// ANSWER: O(n)
+// ANSWER: O(1)
 
 
 // Q: Could you come up with a solution that has a better time complexity? If so, what is that time complexity?
@@ -46,7 +46,7 @@ function printB(number) {
   }
 }
 // Q: What is the time complexity of the function?
-// ANSWER: O(1)
+// ANSWER: O(n)
 
 
 // 4) -------------------------------------------------------
@@ -76,7 +76,7 @@ let newNumbersA = numbers.filter((num) => {
   return num < 5
 })
 // Q: What is the time complexity of the filter higher-order function?
-// ANSWER: O(1)
+// ANSWER: O(n)
 
 
 // 7) -------------------------------------------------------
@@ -84,7 +84,7 @@ let newNumbersB = numbers.map((num) => {
   return num * 3
 })
 // Q: What is the time complexity of the map higher-order function?
-// ANSWER: O(1) *** Might be wrong
+// ANSWER: O(n) 
 
 
 // 8) -------------------------------------------------------
@@ -92,7 +92,7 @@ function removeNum() {
     numbers.splice(3,1)
 }
 // Q: What is the time complexity of the function?
-// ANSWER: O(1)
+// ANSWER: O(n)
 
 
 // 9) -------------------------------------------------------
@@ -119,7 +119,7 @@ function printFirstTwoNames(array) {
 }
 
 // Q: What is the time complexity of the function? Could we write this function differently to accomplish the goal of the function in a faster time complexity?
-// ANSWER: 
+// ANSWER: O(1)
 
 
 // Advanced Challenges
@@ -134,7 +134,9 @@ function printFirstTwoNames(array) {
 
 // Starting Code:
 function squareEveryDigit(number) {
-    
+  const num = []
+  number.toString().split('').forEach(Answer => num.push(parseInt(Answer) ** 2))
+  const final = num.toString().replace(/,/g ,"")
+  console.log(final)
 }
-
 squareEveryDigit(946) // When running 946, you should see a result of 811636
